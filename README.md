@@ -48,24 +48,23 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | ELKvNetServer        | Load Balancer   | 10.1.0.4   | Linux            |
 | Web-1                | Virtual Machine | 10.0.0.5   | Linux            |
 | Web2                 | Virtual Machine | 10.0.0.7   | Linux            |
-|                      |                 |            |                  |
 
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+52.168.5.31
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by private connection.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
+| Jump-Box- | Yes/No              | 10.0.0.1 10.0.0.2    |
 |          |                     |                      |
 |          |                     |                      |
 ### Elk Configuration
