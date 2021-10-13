@@ -113,35 +113,29 @@ Filebeat and Metricbeat ymls give us the ability to create, manage, ship, and da
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-SSH into the control node and follow the steps below:
+SSH into the control node (jump box) and follow the steps below:
 
-- Copy the elkinstall.yml file to /etc/ansible .
-- Update the /etc/ansible/hosts file to include you webservers addresses in the [webservers] section and the elk server address in the [elk].  Your added entries should look something like the following;
-
+- run; $ sudo docker ps   (checks for your ansible container)
+- run; $ sudo docker container list -a    (locates your container name)
+- run; $ sudo docker container start <container name>      (to start the container)
+- run; $ sudo docker container attach <container name>     (to attach to the container)
+- run; # cat ~/.ssh/id_rsa.pub    (copy and keep the SSH public key. You'll need user name and the ansible container ssh public key to configure your VM's.)
+- edit the /etc/ansible/hosts file to include you webservers and your elk server ip addresses. for example:
+ 
 [webservers]
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+ 
+ - run; /etc/ansible# ansible-playbook pentest.yml    (this will increase memory, instoll docker.io, install python3-php, and the docker Python pip modules) 
+ - ssh into you ELK machine to verify you connection is working. If you have a working connection goto the next step to run elk.
+ - run; /etc/ansible# ansible-playbook elkinstall.yml     (to install the elk container - sebp/elk:761  w/ published port 5601:5601, 92002:9200, 5044:5044)
+ - after running elkinstall.yml, ssh into you container and run; sudo docker ps  to check that the elk-docker is running
 
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-
-azureuser@Jump-Box-Provisioner:~$ sudo docker ps -a
-azureuser@Jump-Box-Provisioner:~$ sudo apt update
-azureuser@Jump-Box-Provisioner:~$ sudo apt install docker.io
-azureuser@Jump-Box-Provisioner:~$ sudo systemctl status docker
-azureuser@Jump-Box-Provisioner:~$ sudo docker pull cyberxsecurity/ansible
-azureuser@Jump-Box-Provisioner:~$ sudo docker run -ti cyberxsecurity/ansible:latest bash
-docker container start charming_greider
-docker container attach charming_greider
 
 
 
