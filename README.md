@@ -120,7 +120,7 @@ SSH into the control node (jump box) and follow the steps below:
 - run; $ sudo docker container start <container name>      (to start the container)
 - run; $ sudo docker container attach <container name>     (to attach to the container)
 - run; # cat ~/.ssh/id_rsa.pub    (copy and keep the SSH public key. You'll need user name and the ansible container ssh public key to configure your VM's.)
-- edit the /etc/ansible/hosts file to include you webservers and your elk server ip addresses. for example:
+- edit the /etc/ansible/hosts file to include your webservers and your elk server ip addresses. for example:
  
 [webservers]
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
@@ -131,7 +131,7 @@ SSH into the control node (jump box) and follow the steps below:
  
  - run; /etc/ansible# ansible-playbook pentest.yml    (this will increase memory, instoll docker.io, install python3-php, and the docker Python pip modules) 
  - ssh into you ELK machine to verify you connection is working. If you have a working connection goto the next step to run elk.
- - run; /etc/ansible# ansible-playbook elkinstall.yml     (to install the elk container - sebp/elk:761  w/ published port 5601:5601, 92002:9200, 5044:5044)
+ - run; /etc/ansible# ansible-playbook elkinstall.yml     -(to install the elk container - sebp/elk:761  w/ published port 5601:5601, 92002:9200, 5044:5044)
  - after running elkinstall.yml, ssh into you container and run; sudo docker ps  to check that the elk-docker is running
 
 
