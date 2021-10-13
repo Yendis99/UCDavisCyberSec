@@ -97,21 +97,21 @@ Kibana - has dashboards, visualizations, and searches to present data
 
 Elasticsearch - json data base for storing log data;
 
-Haproxy = collects and parses logs from a high availability proxy/load balancer ;
+Haproxy = collects and parses logs from high availability proxy/load balancer ;
 
-Kafka consomes, stores, and parses filebeat messages to logs;
+Kafka consumes, stores, and parses filebeat messages. creates logs;
 
 Nats - sets path to logs, combines multiline log events into one event, helps to format and shape data
 
-Osquery - collects and decudes results logs;
+Osquery - collects and decodes results logs;
 
 Google Santa - macOS security tool that can blacklist/whitelist binaries;
 
 These Beats allow us to collect the following information from each machine:
-Filebeat and Metricbeat ymls give us the ability to create, manage, ship, and data mine system log files.  These logs can be used to investigate rishk and to produce comprehensive security reports based captured log events.  
+Filebeat and Metricbeat modules give us the ability to create, manage, ship, and investigate system log files.  These logs can be used to investigate alerts and to produce comprehensive security reports based on captured log events.  
 
 ### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have a control node provisioned: 
 
 SSH into the control node (jump box) and follow the steps below:
 
@@ -120,17 +120,16 @@ SSH into the control node (jump box) and follow the steps below:
 - run; $ sudo docker container start <container name>      (to start the container)
 - run; $ sudo docker container attach <container name>     (to attach to the container)
 - run; # cat ~/.ssh/id_rsa.pub    (copy and keep the SSH public key. You'll need user name and the ansible container ssh public key to configure your VM's.)
-- edit the /etc/ansible/hosts file to include your webservers and your elk server ip addresses. for example:
+- edit the /etc/ansible/hosts file to include your webservers and your elk server ip addresses. like:
  
 [webservers]
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
  
- - run; /etc/ansible# ansible-playbook pentest.yml    (this will increase memory, instoll docker.io, install python3-php, and the docker Python pip modules) 
- - ssh into you ELK machine to verify you connection is working. If you have a working connection goto the next step to run elk.
+ - run; /etc/ansible# ansible-playbook pentest.yml    (this will increase memory, install docker.io, install python3-php, and the docker Python pip modules) 
+ - ssh into you ELK machine to verify you connection is working. If you have a working connection next step to run elk.
  - run; /etc/ansible# ansible-playbook elkinstall.yml   (to install the elk container - sebp/elk:761  w/ published port 5601:5601, 92002:9200, 5044:5044)
  - after running elkinstall.yml, ssh into you container and run; sudo docker ps  to check that the elk-docker is running
 
