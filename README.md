@@ -114,8 +114,17 @@ Filebeat and Metricbeat ymls give us the ability to create, manage, ship, and da
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+
+- Copy the elkinstall.yml file to /etc/ansible .
+- Update the /etc/ansible/hosts file to include you webservers addresses in the [webservers] section and the elk server address in the [elk].  Your added entries should look something like the following;
+
+[webservers]
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
@@ -124,3 +133,16 @@ _TODO: Answer the following questions to fill in the blanks:_
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+azureuser@Jump-Box-Provisioner:~$ sudo docker ps -a
+azureuser@Jump-Box-Provisioner:~$ sudo apt update
+azureuser@Jump-Box-Provisioner:~$ sudo apt install docker.io
+azureuser@Jump-Box-Provisioner:~$ sudo systemctl status docker
+azureuser@Jump-Box-Provisioner:~$ sudo docker pull cyberxsecurity/ansible
+azureuser@Jump-Box-Provisioner:~$ sudo docker run -ti cyberxsecurity/ansible:latest bash
+docker container start charming_greider
+docker container attach charming_greider
+
+
+
+
