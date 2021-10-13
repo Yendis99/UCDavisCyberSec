@@ -93,31 +93,22 @@ We have installed the following Beats on these machines:
 filebeat-playbook.yml and metricbeat-playbook.yml
 
 
-kibana - has dashboards, visualizations, and searches to present data
+Kibana - has dashboards, visualizations, and searches to present data
 
 Elasticsearch - json data base for storing log data;
 
 Haproxy = collects and parses logs from a high availability proxy/load balancer ;
-log
 
 Kafka consomes, stores, and parses filebeat messages to logs;
-log
-
-Kibana;
-log
 
 Nats - sets path to logs, combines multiline log events into one event, helps to format and shape data
-log
 
 Osquery - collects and decudes results logs;
-result
 
 Google Santa - macOS security tool that can blacklist/whitelist binaries;
-log
-
 
 These Beats allow us to collect the following information from each machine:
-Filebeat and Metricbeat ymls give us the ability to create, manage, ship, and data mine system log files.  These logs can be used to investigate rishk and to produce comprehensive security reports based logged events.  
+Filebeat and Metricbeat ymls give us the ability to create, manage, ship, and data mine system log files.  These logs can be used to investigate rishk and to produce comprehensive security reports based captured log events.  
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
