@@ -107,7 +107,6 @@ Osquery - collects and decodes results logs;
 
 Google Santa - macOS security tool that can blacklist/whitelist binaries;
 
-Beats allow us to collect the following information from each machine:
 Filebeat and Metricbeat modules give us the ability to create, manage, ship, and investigate system log files.  These logs can be used to investigate alerts and to produce comprehensive security reports based on captured log events.  
 
 ### Using the Playbook
