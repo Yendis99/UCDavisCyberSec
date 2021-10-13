@@ -67,7 +67,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 .
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. Ansible automation allows you to create and repidly deploy your Virtual Machine with YAML playbook files. This is also a repeatable process that allows you to modify and re-configure as necessary. 
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. Ansible automation allows you to create and rapidly deploy your Virtual Machine with YAML playbook files. This is also a repeatable process that allows you to modify and re-configure as necessary. 
 
 The elkinstall playbook implements the following tasks:
 
