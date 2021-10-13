@@ -62,18 +62,17 @@ Machines within the network can only be accessed by private connection.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump-Box- | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
-### Elk Configuration
+| Name                 | Publicly Accessible  | Allowed IP Address  |
+|----------------------|----------------------|---------------------|
+| Jump-Box-Provisioner | No                   | 10.0.0.4            |
+|                      |                      |                     |
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- Ansible automation allows you to create and repidly deploy your Virtual Machine with YAML playbook files. This is also a repeatable process that allows you to modify and re-configure as necessary. 
+### Elk Configuration
+.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. Ansible automation allows you to create and repidly deploy your Virtual Machine with YAML playbook files. This is also a repeatable process that allows you to modify and re-configure as necessary. 
 
 The elkinstall playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+
 - logs in as remote user
 - apt installs docker
 - apt installs pip3
