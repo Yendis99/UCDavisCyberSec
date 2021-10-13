@@ -122,9 +122,11 @@ SSH into the control node (jump box) and follow the steps below:
 - edit the /etc/ansible/hosts file to include your webservers and your elk server ip addresses. like:
  
 [webservers]
+ 
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
 
 [elk]
+ 
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
  
  - run; /etc/ansible# ansible-playbook pentest.yml    (this will increase memory, install docker.io, install python3-php, and the docker Python pip modules) 
