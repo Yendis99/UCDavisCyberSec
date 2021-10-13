@@ -32,11 +32,11 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- The load balancer is closed to the flow of inbound traffice unleess a pathway is explicitly opened by an network security group. The load balancer also dissalows known malicious IP addresses.
+Load balancing ensures that the application will be highly available, in addition to restricting access to the public network.
+- The load balancer is closed to the flow of inbound traffic unless a pathway is explicitly opened by an network security group. The load balancer also disalows known malicious IP addresses.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system and system metrics.
-- Filebeat monitors logs, manages log locations, and can forwarding logs to applications like eleasticsearh and logstash for examination. 
+- Filebeat monitors logs, manages log locations, and can forward logs to applications like elasticsearh and logstash for examination. 
 - Metricbeat collects and logs metrics and statistics for analysis
 
 The configuration details of each machine may be found below.
