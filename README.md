@@ -60,10 +60,12 @@ Machines within the network can only be accessed by private connection.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name                 | Publicly Accessible  | Allowed IP Address  |
-|----------------------|----------------------|---------------------|
-| Jump-Box-Provisioner | No                   | 10.0.0.4            |
-|                      |                      |                     |
+| Name                 | Publicly Accessible | allowed IP Address |
+|----------------------|---------------------|--------------------|
+| Jump-Box-Provisioner |          No         |       X.X.X.X      |
+| ELKvNetServer        |         yes         |    40.83.141.239   |
+| Web1                 |         yes         |    13.72.113.53    |
+| Web2                 |         yes         |    13.72.113.53    |
 
 ### Elk Configuration
 .
